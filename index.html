@@ -8,22 +8,26 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
   :root {
-    --bg: #0a0a0b;
-    --surface: #111113;
-    --surface2: #18181b;
-    --border: #27272a;
-    --text: #fafafa;
-    --muted: #a1a1aa;
+    --bg: #070708;
+    --bg2: #0c0c0f;
+    --surface: #0f0f14;
+    --surface2: #16161d;
+    --border: #1e1e28;
+    --border-hover: #2e2e3d;
+    --text: #f4f4f6;
+    --muted: #8a8a96;
+    --muted2: #5c5c68;
     --accent: #a78bfa;
+    --accent-glow: rgba(167, 139, 250, 0.15);
     --accent2: #38bdf8;
     --green: #4ade80;
     --orange: #fb923c;
     --red: #f87171;
     --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --mono: 'JetBrains Mono', 'Fira Code', monospace;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
   body {
     background: var(--bg);
@@ -32,263 +36,328 @@
     line-height: 1.6;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  /* --- Top bar --- */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .topbar {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 10, 11, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(7, 7, 8, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
   .topbar-inner {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 14px 24px;
+    padding: 16px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 20px;
   }
   .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 11px;
     text-decoration: none;
     color: var(--text);
+    transition: opacity 0.2s;
   }
+  .logo:hover { opacity: 0.85; }
   .logo-mark {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border-radius: 8px;
+    border-radius: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    font-weight: 800;
-    color: #0a0a0b;
-    flex-shrink: 0;
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.25);
   }
   .logo-text {
     font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.02em;
+    font-size: 15px;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
   }
-  .logo-text span { color: var(--muted); font-weight: 400; }
-  .topbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  .logo-text .sub {
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--muted2);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 1px;
   }
+  .topbar-right { display: flex; align-items: center; gap: 12px; }
   .count-badge {
     font-size: 12px;
     color: var(--muted);
     background: var(--surface2);
     border: 1px solid var(--border);
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 999px;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    transition: border-color 0.2s;
   }
+  .count-badge:hover { border-color: var(--border-hover); }
 
-  /* --- Layout --- */
   .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 28px;
+    position: relative;
+    z-index: 1;
   }
 
-  /* --- Hero --- */
   .hero {
-    padding: 72px 0 56px;
+    padding: 80px 0 64px;
     text-align: center;
+    position: relative;
   }
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12px;
+    gap: 8px;
+    font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--accent);
-    background: rgba(167, 139, 250, 0.08);
-    border: 1px solid rgba(167, 139, 250, 0.15);
-    padding: 5px 14px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(167, 139, 250, 0.18);
+    padding: 6px 16px;
     border-radius: 999px;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
   .hero-eyebrow .dot {
-    width: 6px; height: 6px;
+    width: 7px;
+    height: 7px;
     background: var(--green);
     border-radius: 50%;
-    animation: pulse-dot 2s ease-in-out infinite;
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse-dot 2.2s ease-in-out infinite;
   }
   @keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.8); }
+    0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px var(--green); }
+    50% { opacity: 0.5; transform: scale(0.75); box-shadow: 0 0 4px var(--green); }
   }
   .hero h1 {
-    font-size: clamp(36px, 6vw, 64px);
+    font-size: clamp(40px, 7vw, 76px);
     font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
+    margin-bottom: 20px;
   }
   .hero h1 .gradient {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, #818cf8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 200% 200%;
+    animation: shimmer 6s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
   .hero p {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--muted);
-    max-width: 520px;
+    max-width: 500px;
     margin: 0 auto;
+    line-height: 1.65;
   }
 
-  /* --- Filter bar --- */
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 20px 0 8px;
+    margin-bottom: 48px;
+  }
+  .stat { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .stat-num { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+  .stat-divider { width: 3px; height: 3px; background: var(--border); border-radius: 50%; }
+
   .filter-bar {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 32px;
+    padding: 0 0 28px;
+    margin-bottom: 36px;
     flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
   }
   .filter-btn {
     background: none;
-    border: none;
+    border: 1px solid transparent;
     color: var(--muted);
     font-size: 13px;
     font-weight: 500;
-    padding: 6px 14px;
+    padding: 7px 16px;
     border-radius: 999px;
     cursor: pointer;
-    transition: all 0.15s;
+    transition: all 0.2s ease;
     font-family: var(--font);
+    position: relative;
   }
-  .filter-btn:hover { color: var(--text); background: var(--surface2); }
+  .filter-btn:hover { color: var(--text); background: var(--surface2); border-color: var(--border); }
   .filter-btn.active {
     color: var(--text);
     background: var(--surface2);
-    border: 1px solid var(--border);
+    border-color: var(--border-hover);
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.1);
   }
+  .filter-btn .tag-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 7px;
+    vertical-align: middle;
+    transition: transform 0.2s;
+  }
+  .filter-btn.active .tag-dot { transform: scale(1.2); }
+  .filter-btn[data-filter="all"] .tag-dot { background: var(--muted); }
+  .filter-btn[data-filter="agent"] .tag-dot { background: var(--accent); }
+  .filter-btn[data-filter="app"] .tag-dot { background: var(--accent2); }
+  .filter-btn[data-filter="model"] .tag-dot { background: var(--green); }
+  .filter-btn[data-filter="update"] .tag-dot { background: var(--orange); }
+
   .filter-bar .spacer { flex: 1; }
-  .sort-label {
-    font-size: 12px;
-    color: var(--muted);
+  .live-indicator {
     display: flex;
     align-items: center;
     gap: 6px;
+    font-size: 11px;
+    color: var(--muted2);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+  .live-indicator .pulse {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse-dot 2.2s ease-in-out infinite;
   }
 
-  /* --- Feed --- */
-  .feed { display: flex; flex-direction: column; gap: 16px; }
+  .feed { display: flex; flex-direction: column; gap: 14px; }
 
-  /* --- Card --- */
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
+    border-radius: 14px;
+    padding: 24px 26px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
-    transition: border-color 0.2s, transform 0.15s;
+    transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
     cursor: default;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: card-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  .card:hover {
-    border-color: #3f3f46;
-    transform: translateY(-1px);
+  @keyframes card-in {
+    to { opacity: 1; transform: translateY(0); }
   }
-  .card::before {
+  .card::after {
     content: '';
     position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    inset: 0;
+    border-radius: 14px;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 0),
+      rgba(167, 139, 250, 0.04) 0%, transparent 60%);
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.3s;
+    pointer-events: none;
   }
-  .card:hover::before { opacity: 1; }
+  .card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+  }
+  .card:hover::after { opacity: 1; }
 
-  .card-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .card-tool {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .card-left { display: flex; align-items: flex-start; gap: 14px; }
   .card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     background: var(--surface2);
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 22px;
     flex-shrink: 0;
     overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .card-icon img { width: 100%; height: 100%; object-fit: cover; }
+  .card:hover .card-icon { border-color: var(--border-hover); box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.1); }
+  .card-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 11px; }
+  .card-info { flex: 1; min-width: 0; }
   .card-name {
     font-weight: 700;
     font-size: 17px;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 3px;
   }
-  .card-name a {
-    color: var(--text);
-    text-decoration: none;
-  }
+  .card-name a { color: var(--text); text-decoration: none; transition: color 0.15s; }
   .card-name a:hover { color: var(--accent); }
+  .card-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
   .card-tag {
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 3px 8px;
+    letter-spacing: 0.07em;
+    padding: 3px 9px;
     border-radius: 999px;
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--muted);
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
-  .card-tag.agent { color: var(--accent); border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.06); }
-  .card-tag.app { color: var(--accent2); border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.06); }
-  .card-tag.model { color: var(--green); border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.06); }
-  .card-tag.update { color: var(--orange); border-color: rgba(251,146,60,0.3); background: rgba(251,146,60,0.06); }
-  .card-date {
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-  }
+  .card-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+  .card-tag.agent  { color: var(--accent); border-color: rgba(167,139,250,0.22); background: rgba(167,139,250,0.07); }
+  .card-tag.agent::before { background: var(--accent); }
+  .card-tag.app    { color: var(--accent2); border-color: rgba(56,189,248,0.22); background: rgba(56,189,248,0.07); }
+  .card-tag.app::before   { background: var(--accent2); }
+  .card-tag.model  { color: var(--green); border-color: rgba(74,222,128,0.22); background: rgba(74,222,128,0.07); }
+  .card-tag.model::before { background: var(--green); }
+  .card-tag.update { color: var(--orange); border-color: rgba(251,146,60,0.22); background: rgba(251,146,60,0.07); }
+  .card-tag.update::before { background: var(--orange); }
+  .card-date { font-size: 11px; color: var(--muted2); font-variant-numeric: tabular-nums; }
 
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .card-desc {
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.65;
-  }
+  .card-body { display: flex; flex-direction: column; gap: 14px; padding-left: 58px; }
+  .card-desc { color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .card-desc strong { color: var(--text); font-weight: 600; }
+
   .card-media {
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--surface2);
@@ -297,119 +366,146 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: border-color 0.2s;
   }
-  .card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .card-media video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .card:hover .card-media { border-color: var(--border-hover); }
+  .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .card:hover .card-media img { transform: scale(1.02); }
+  .card-media video { width: 100%; height: 100%; object-fit: cover; background: #000; }
+  .card-media .media-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(7,7,8,0.6) 100%);
+    pointer-events: none;
   }
   .card-media .placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    color: var(--muted);
-    font-size: 13px;
+    color: var(--muted2);
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
   }
-  .card-media .placeholder svg { opacity: 0.3; }
+  .card-media .placeholder svg { opacity: 0.2; }
 
-  .card-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4px;
-  }
+  .card-links { display: flex; flex-wrap: wrap; gap: 8px; padding-left: 58px; }
   .link-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 600;
-    padding: 7px 14px;
+    padding: 7px 13px;
     border-radius: 8px;
     text-decoration: none;
-    transition: all 0.15s;
+    transition: all 0.2s ease;
     font-family: var(--font);
     cursor: pointer;
     border: none;
+    position: relative;
+    overflow: hidden;
   }
+  .link-btn::after { content: ''; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity 0.2s; }
+  .link-btn:hover::after { opacity: 0.06; }
+  .link-btn:active { transform: translateY(0); }
   .link-btn.primary {
-    background: var(--accent);
-    color: #0a0a0b;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    color: #070708;
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.2);
   }
-  .link-btn.primary:hover { background: #c4b5fd; transform: translateY(-1px); }
-  .link-btn.secondary {
-    background: var(--surface2);
-    color: var(--text);
-    border: 1px solid var(--border);
+  .link-btn.primary:hover {
+    box-shadow: 0 4px 16px rgba(167, 139, 250, 0.35), 0 0 0 1px rgba(167, 139, 250, 0.4);
+    transform: translateY(-1px);
+    color: #070708;
   }
-  .link-btn.secondary:hover { border-color: #3f3f46; background: #1f1f23; }
-  .link-btn.github {
-    background: var(--surface2);
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
-  .link-btn.github:hover { color: var(--accent2); border-color: rgba(56,189,248,0.3); }
-  .link-btn svg { width: 14px; height: 14px; }
+  .link-btn.secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .link-btn.secondary:hover { border-color: var(--border-hover); background: #1c1c25; color: var(--text); }
+  .link-btn.github { background: var(--surface2); color: var(--text); border: 1px solid var(--border); gap: 7px; }
+  .link-btn.github:hover { color: var(--accent2); border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.04); }
+  .link-btn.github svg { width: 13px; height: 13px; flex-shrink: 0; }
+  .link-btn svg.nav { width: 13px; height: 13px; }
+  .link-btn .arrow { font-size: 10px; opacity: 0.6; transition: opacity 0.2s, transform 0.2s; }
+  .link-btn:hover .arrow { opacity: 1; transform: translateX(2px); }
 
-  /* --- Empty state --- */
   .empty {
     text-align: center;
-    padding: 80px 24px;
+    padding: 72px 24px;
     color: var(--muted);
+    animation: card-in 0.4s ease forwards;
   }
-  .empty svg { opacity: 0.2; margin-bottom: 16px; }
-  .empty h3 { font-size: 18px; color: var(--text); margin-bottom: 8px; }
+  .empty svg { opacity: 0.15; margin-bottom: 16px; }
+  .empty h3 { font-size: 17px; color: var(--text); margin-bottom: 6px; font-weight: 600; }
+  .empty p { font-size: 13px; }
 
-  /* --- Footer --- */
   .footer {
     border-top: 1px solid var(--border);
     margin-top: 64px;
-    padding: 32px 0;
+    padding: 36px 0 48px;
     text-align: center;
-    color: var(--muted);
-    font-size: 13px;
+    color: var(--muted2);
+    font-size: 12.5px;
+    position: relative;
+    z-index: 1;
+  }
+  .footer .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
   }
   .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { color: var(--accent2); text-decoration: underline; }
+  .footer .heart { color: var(--red); }
 
-  /* --- Toast --- */
   .toast {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 28px;
+    right: 28px;
     background: var(--surface);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-hover);
     border-radius: 10px;
-    padding: 12px 18px;
+    padding: 13px 18px;
     font-size: 13px;
     color: var(--text);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-    transform: translateY(100px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    transform: translateY(120px);
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 200;
-    max-width: 360px;
+    max-width: 340px;
+    backdrop-filter: blur(12px);
   }
   .toast.show { transform: translateY(0); opacity: 1; }
 
-  /* --- Scrollbar --- */
-  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border-hover); }
+  ::selection { background: rgba(167, 139, 250, 0.25); color: var(--text); }
 
-  @media (max-width: 640px) {
-    .hero { padding: 48px 0 36px; }
+  @media (max-width: 768px) {
+    .topbar-inner { padding: 12px 20px; }
+    .container { padding: 0 20px; }
+    .hero { padding: 48px 0 40px; }
+    .hero h1 { font-size: clamp(32px, 10vw, 52px); }
+    .stats { gap: 16px; flex-wrap: wrap; }
+    .card-body, .card-links { padding-left: 0; }
     .card { padding: 18px; }
+    .footer .footer-inner { padding: 0 20px; flex-direction: column; gap: 8px; }
+  }
+  @media (max-width: 480px) {
     .topbar-inner { padding: 10px 16px; }
     .container { padding: 0 16px; }
-    .card-links { gap: 6px; }
-    .link-btn { font-size: 12px; padding: 6px 10px; }
+    .logo-text { font-size: 13px; }
+    .logo-text .sub { font-size: 10px; }
+    .count-badge { font-size: 11px; padding: 4px 10px; }
+    .card-desc { font-size: 13px; }
   }
 </style>
 </head>
@@ -419,9 +515,12 @@
   <div class="topbar-inner">
     <a class="logo" href="#">
       <div class="logo-mark">⚡</div>
-      <div class="logo-text">Open Tool Drop <span>— fresh AI tools daily</span></div>
+      <div class="logo-text">
+        Open Tool Drop
+        <span class="sub">curated open-source AI</span>
+      </div>
     </a>
-    <div class="topbar-actions">
+    <div class="topbar-right">
       <span class="count-badge" id="countBadge">0 tools</span>
     </div>
   </div>
@@ -431,45 +530,51 @@
   <section class="hero">
     <div class="hero-eyebrow">
       <span class="dot"></span>
-      curated open-source AI
+      new tools detected daily
     </div>
-    <h1>New tools.<br><span class="gradient">Zero friction.</span></h1>
-    <p>Every open-source AI tool, agent, and model release worth trying — with a link so you can test it right away.</p>
+    <h1>Find. Click.<br><span class="gradient">Run it.</span></h1>
+    <p>Every open-source AI tool, agent, and model worth trying — found, tested, and linked so you can give it a spin in seconds.</p>
   </section>
 
+  <div class="stats" id="statsStrip">
+    <div class="stat"><span class="stat-num" id="statTotal">0</span><span>tools listed</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" id="statAgents">0</span><span>agents</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" id="statApps">0</span><span>apps</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" id="statUpdates">0</span><span>latest updates</span></div>
+  </div>
+
   <nav class="filter-bar" id="filterBar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="agent">Agents</button>
-    <button class="filter-btn" data-filter="app">Apps</button>
-    <button class="filter-btn" data-filter="model">Models</button>
-    <button class="filter-btn" data-filter="update">Updates</button>
+    <button class="filter-btn active" data-filter="all"><span class="tag-dot"></span>All tools</button>
+    <button class="filter-btn" data-filter="agent"><span class="tag-dot"></span>Agents</button>
+    <button class="filter-btn" data-filter="app"><span class="tag-dot"></span>Apps</button>
+    <button class="filter-btn" data-filter="model"><span class="tag-dot"></span>Models</button>
+    <button class="filter-btn" data-filter="update"><span class="tag-dot"></span>Updates</button>
     <span class="spacer"></span>
-    <span class="sort-label">newest first</span>
+    <span class="live-indicator"><span class="pulse"></span> live feed</span>
   </nav>
 
   <div class="feed" id="feed"></div>
 </main>
 
 <footer class="footer">
-  Open Tool Drop — curating open-source AI tools. <a href="https://github.com" target="_blank" rel="noopener">Source on GitHub</a>.
+  <div class="footer-inner">
+    <span>Open Tool Drop — curating open-source AI, daily.</span>
+    <span>Built with <span class="heart">♥</span> · <a href="https://github.com/Samuelyilma/open-ai-tools-news" target="_blank" rel="noopener">source on GitHub</a></span>
+  </div>
 </footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── DATA ────────────────────────────────────────────────────────────
-// Edit this array to add / update / remove news items.
-// Each item:
-//   id          – unique slug (url-safe)
-//   tool        – display name
-//   tag         – one of: agent | app | model | update
-//   icon        – emoji (fallback) or image URL (if iconUrl set)
-//   iconUrl     – optional image URL for the card icon
-//   desc        – short description (1–3 sentences)
-//   media       – { type: "image"|"video", url: "..." } or null
-//   links       – array of { label, url, kind: "primary"|"github"|"secondary" }
-//   date        – ISO date string (YYYY-MM-DD)
-//   source      – where you found it (optional, for your reference)
+/* ── DATA ──────────────────────────────────────────────────────────
+   To add a tool: add a new object to ITEMS.
+   Each item: id, tool, tag (agent|app|model|update), icon (emoji or iconUrl),
+   desc, media ({type:"image"|"video", url}), links [{label,url,kind}],
+   date (YYYY-MM-DD), source (optional)
+────────────────────────────────────────────────────────────────── */
 
 const ITEMS = [
   {
@@ -477,7 +582,7 @@ const ITEMS = [
     tool: "OpenClaw",
     tag: "agent",
     icon: "🦴",
-    desc: "Anthropic's open-source AI agent framework — a single orchestrator that connects to tools, runs sub-agents, and handles multi-step tasks across your machine. Full local execution, pluggable skills, and a WebSocket control interface.",
+    desc: "A single open-source orchestrator that connects to tools, runs sub-agents, and handles multi-step tasks across your machine — full local execution, pluggable skills, WebSocket control.",
     media: { type: "image", url: "https://picsum.photos/seed/openclaw/800/450" },
     links: [
       { label: "View on GitHub", url: "https://github.com/openai/openclaw", kind: "github" },
@@ -492,7 +597,7 @@ const ITEMS = [
     tool: "Open Interpreter 0.6",
     tag: "update",
     icon: "⌨️",
-    desc: "Major update to the open-source code execution agent: new Python runtime sandbox, improved multi-language support (JS, Bash, SQL), and tighter integration with local LLMs via Ollama and LM Studio.",
+    desc: "Major update to the open-source code execution agent: new Python runtime sandbox, multi-language support (JS, Bash, SQL), and tighter integration with local LLMs via Ollama.",
     media: { type: "video", url: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
     links: [
       { label: "GitHub", url: "https://github.com/OpenInterpreter/open-interpreter", kind: "github" },
@@ -506,7 +611,7 @@ const ITEMS = [
     tool: "Hermes Agent",
     tag: "agent",
     icon: "🧪",
-    desc: "A general-purpose AI agent that runs on your machine: web search, file management, browser automation, code execution, image generation, and multi-agent delegation — all from a single conversational interface. Extensible via skills and plugins.",
+    desc: "A general-purpose AI agent that runs on your machine: web search, file management, browser automation, code execution, image generation, and multi-agent delegation — from one conversational interface. Extensible via skills and plugins.",
     media: { type: "image", url: "https://picsum.photos/seed/hermes/800/450" },
     links: [
       { label: "GitHub", url: "https://github.com/NousResearch/hermes-agent", kind: "github" },
@@ -517,46 +622,42 @@ const ITEMS = [
   }
 ];
 
-// ─── RENDER ──────────────────────────────────────────────────────────
-const feed = document.getElementById('feed');
+/* ── RENDER ─────────────────────────────────────────────────────── */
+const feed       = document.getElementById('feed');
 const countBadge = document.getElementById('countBadge');
-const toast = document.getElementById('toast');
+const toast      = document.getElementById('toast');
+const statTotal  = document.getElementById('statTotal');
+const statAgents = document.getElementById('statAgents');
+const statApps   = document.getElementById('statApps');
+const statUpdates= document.getElementById('statUpdates');
+
+const TAG_LABELS = { agent: 'Agent', app: 'App', model: 'Model', update: 'Update' };
 
 function formatDate(iso) {
   const d = new Date(iso + 'T00:00:00');
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 }
 
-function tagClass(tag) {
-  return 'card-tag ' + tag;
-}
-
-function renderCard(item, idx) {
-  const isNew = item.isNew;
-
-  let iconHtml = '';
-  if (item.iconUrl) {
-    iconHtml = `<img src="${item.iconUrl}" alt="${item.tool}" loading="lazy">`;
-  } else {
-    iconHtml = item.icon || '🔧';
-  }
+function renderCard(item, i) {
+  let iconHtml = item.iconUrl
+    ? `<img src="${item.iconUrl}" alt="${item.tool}" loading="lazy">`
+    : (item.icon || '🔧');
 
   let mediaHtml = '';
   if (item.media) {
     if (item.media.type === 'video') {
-      mediaHtml = `<video src="${item.media.url}" controls autoplay muted loop playsinline></video>`;
+      mediaHtml = `<video src="${item.media.url}" controls autoplay muted loop playsinline preload="metadata"></video>`;
     } else if (item.media.type === 'image') {
-      mediaHtml = `<img src="${item.media.url}" alt="${item.tool}" loading="lazy">`;
+      mediaHtml = `<img src="${item.media.url}" alt="${item.tool} preview" loading="lazy">`;
     }
   } else {
-    mediaHtml = `
-      <div class="placeholder">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+    mediaHtml = `<div class="placeholder">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="3" y="3" width="18" height="18" rx="2"/>
           <circle cx="8.5" cy="8.5" r="1.5"/>
           <path d="m21 15-5-5L5 21"/>
         </svg>
-        <span>No preview</span>
+        <span>no preview available</span>
       </div>`;
   }
 
@@ -564,77 +665,96 @@ function renderCard(item, idx) {
   if (item.links && item.links.length) {
     linksHtml = `<div class="card-links">`;
     item.links.forEach(link => {
-      const cls = link.kind === 'primary' ? 'primary' : link.kind === 'github' ? 'github' : 'secondary';
-      const svg = link.kind === 'github'
+      const isPrimary = link.kind === 'primary';
+      const isGithub  = link.kind === 'github';
+      const cls = isPrimary ? 'primary' : isGithub ? 'github' : 'secondary';
+      const ghSvg = isGithub
         ? `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.61-4.04-1.61-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.76.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58C20.57 21.79 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>`
-        : link.kind === 'primary'
-        ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
         : '';
-      linksHtml += `<a class="link-btn ${cls}" href="${link.url}" target="_blank" rel="noopener">${svg}${link.label}</a>`;
+      const navSvg = !isGithub && isPrimary
+        ? `<svg class="nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`
+        : '';
+      const arrow = isPrimary ? '<span class="arrow">→</span>' : '';
+      linksHtml += `<a class="link-btn ${cls}" href="${link.url}" target="_blank" rel="noopener">${ghSvg || navSvg}${link.label}${arrow}</a>`;
     });
     linksHtml += `</div>`;
   }
 
+  const mainLink = (item.links || []).find(l => l.kind === 'primary' || l.kind === 'github');
+  const nameLink = mainLink ? mainLink.url : '#';
+
   return `
-    <article class="card" data-tag="${item.tag}" data-id="${item.id}">
-      <div class="card-header">
-        <div class="card-tool">
-          <div class="card-icon">${iconHtml}</div>
-          <div class="card-name"><a href="${item.links ? item.links.find(l => l.kind === 'primary' || l.kind === 'github')?.url || '#' : '#'}">${item.tool}</a></div>
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
-          <span class="${tagClass(item.tag)}">${item.tag}</span>
-          <span class="card-date">${formatDate(item.date)}</span>
+    <article class="card" data-tag="${item.tag}" data-id="${item.id}" style="animation-delay:${(i % 6) * 0.06}s">
+      <div class="card-left">
+        <div class="card-icon">${iconHtml}</div>
+        <div class="card-info">
+          <div class="card-name"><a href="${nameLink}" target="_blank" rel="noopener">${item.tool}</a></div>
+          <div class="card-meta">
+            <span class="card-tag ${item.tag}">${TAG_LABELS[item.tag] || item.tag}</span>
+            <span class="card-date">${formatDate(item.date)}</span>
+          </div>
         </div>
       </div>
       <div class="card-body">
         <p class="card-desc">${item.desc}</p>
-        <div class="card-media">${mediaHtml}</div>
-        ${linksHtml}
+        <div class="card-media">
+          <div class="media-overlay"></div>
+          ${mediaHtml}
+        </div>
       </div>
+      ${linksHtml}
     </article>`;
 }
 
-function render(filter = 'all') {
-  const filtered = filter === 'all'
-    ? ITEMS
-    : ITEMS.filter(i => i.tag === filter);
-
-  if (!filtered.length) {
-    feed.innerHTML = `
-      <div class="empty">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-        </svg>
-        <h3>No tools in this category yet</h3>
-        <p>Check back soon — new ones land every day.</p>
-      </div>`;
-    countBadge.textContent = '0 tools';
-    return;
-  }
-
-  feed.innerHTML = filtered.map((item, i) => renderCard(item, i)).join('');
-  countBadge.textContent = `${filtered.length} tool${filtered.length !== 1 ? 's' : ''}`;
+function updateStats() {
+  statTotal.textContent   = ITEMS.length;
+  statAgents.textContent  = ITEMS.filter(i => i.tag === 'agent').length;
+  statApps.textContent    = ITEMS.filter(i => i.tag === 'app').length;
+  statUpdates.textContent = ITEMS.filter(i => i.tag === 'update').length;
+  countBadge.textContent  = `${ITEMS.length} tool${ITEMS.length !== 1 ? 's' : ''}`;
 }
 
-// ─── FILTERS ─────────────────────────────────────────────────────────
+function render(filter = 'all') {
+  const filtered = filter === 'all' ? ITEMS : ITEMS.filter(i => i.tag === filter);
+  if (!filtered.length) {
+    feed.innerHTML = `<div class="empty">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <h3>Nothing here yet</h3>
+        <p>No tools in this category. Check back soon.</p>
+      </div>`;
+    updateStats();
+    return;
+  }
+  feed.innerHTML = filtered.map((item, i) => renderCard(item, i)).join('');
+  updateStats();
+}
+
 document.getElementById('filterBar').addEventListener('click', e => {
   const btn = e.target.closest('.filter-btn');
   if (!btn) return;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  render(btn.dataset.filter);
+  feed.style.opacity = '0';
+  setTimeout(() => { render(btn.dataset.filter); feed.style.opacity = '1'; }, 80);
 });
 
-// ─── INIT ────────────────────────────────────────────────────────────
+feed.addEventListener('mousemove', e => {
+  const card = e.target.closest('.card');
+  if (!card) return;
+  const r = card.getBoundingClientRect();
+  card.style.setProperty('--mouse-x', ((e.clientX - r.left) / r.width * 100) + '%');
+  card.style.setProperty('--mouse-y', ((e.clientY - r.top) / r.height * 100) + '%');
+});
+
 render();
 
-// ─── TOAST HELPER (for admin actions) ────────────────────────────────
 function toastMsg(msg) {
   toast.textContent = msg;
   toast.classList.add('show');
   clearTimeout(toast._t);
-  toast._t = setTimeout(() => toast.classList.remove('show'), 2500);
+  toast._t = setTimeout(() => toast.classList.remove('show'), 2800);
 }
 window.toastMsg = toastMsg;
 </script>
