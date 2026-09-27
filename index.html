@@ -350,6 +350,18 @@
   .card-tag.model::before { background: var(--green); }
   .card-tag.update { color: var(--orange); border-color: rgba(251,146,60,0.22); background: rgba(251,146,60,0.07); }
   .card-tag.update::before { background: var(--orange); }
+  .card-tag.eclipse   { color: #c084fc; border-color: rgba(192,132,252,0.22); background: rgba(192,132,252,0.07); }
+  .card-tag.eclipse::before { background: #c084fc; }
+  .card-tag.privacy   { color: #6ee7b7; border-color: rgba(110,231,183,0.22); background: rgba(110,231,183,0.07); }
+  .card-tag.privacy::before { background: #6ee7b7; }
+  .card-tag.devtools  { color: #93c5fd; border-color: rgba(147,197,253,0.22); background: rgba(147,197,253,0.07); }
+  .card-tag.devtools::before { background: #93c5fd; }
+  .card-tag.hermes    { color: #f9a8d4; border-color: rgba(249,168,212,0.22); background: rgba(249,168,212,0.07); }
+  .card-tag.hermes::before { background: #f9a8d4; }
+  .card-tag.linux     { color: #a3e635; border-color: rgba(163,230,53,0.22); background: rgba(163,230,53,0.07); }
+  .card-tag.linux::before { background: #a3e635; }
+  .card-tag.releases  { color: var(--orange); border-color: rgba(251,146,60,0.22); background: rgba(251,146,60,0.07); }
+  .card-tag.releases::before { background: var(--orange); }
   .card-date { font-size: 11px; color: var(--muted2); font-variant-numeric: tabular-nums; }
 
   .card-body { display: flex; flex-direction: column; gap: 14px; padding-left: 58px; }
@@ -568,6 +580,49 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- ── Admin panel ──────────────────────────────────────────────── -->
+<div class="admin-panel" id="adminPanel" style="display:none;">
+  <div class="admin-overlay" id="adminOverlay"></div>
+  <div class="admin-modal">
+    <div class="admin-header">
+      <div class="admin-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        Admin
+      </div>
+      <button class="admin-close" id="adminClose" aria-label="Close admin">✕</button>
+    </div>
+    <div class="admin-body">
+      <div class="admin-section">
+        <div class="admin-section-title">News</div>
+        <div class="admin-stats" id="adminStats"></div>
+      </div>
+      <div class="admin-section">
+        <div class="admin-section-title">Watchlist</div>
+        <div class="admin-watchlist" id="adminWatchlist"></div>
+        <form class="admin-add-form" id="adminAddForm">
+          <input type="text" class="admin-input" id="adminRepoInput" placeholder="owner/repo" autocomplete="off">
+          <select class="admin-select" id="adminCatSelect">
+            <option value="open_source">Open Source</option>
+            <option value="ai_agent">AI Agent</option>
+            <option value="hermes">Hermes</option>
+            <option value="android">Android</option>
+            <option value="linux">Linux</option>
+            <option value="application">Application</option>
+          </select>
+          <input type="number" class="admin-input admin-input-sm" id="adminPriInput" placeholder="priority" min="1" max="3" value="3" style="width:60px;">
+          <button type="submit" class="admin-btn admin-btn-primary">Add</button>
+        </form>
+      </div>
+      <div class="admin-section">
+        <div class="admin-section-title">Environment</div>
+        <div class="admin-env" id="adminEnv"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ── DATA ──────────────────────────────────────────────────────────
    To add a tool: add a new object to ITEMS.
@@ -632,6 +687,11 @@ const statApps   = document.getElementById('statApps');
 const statUpdates= document.getElementById('statUpdates');
 
 const TAG_LABELS = { agent: 'Agent', app: 'App', model: 'Model', update: 'Update' };
+const TAG_LABELS_EXTRA = {
+  eclipse: 'Eclipse', privacy: 'Privacy', devtools: 'DevTools',
+  hermes: 'Hermes', linux: 'Linux', releases: 'Release',
+  mobile: 'Mobile', webdev: 'WebDev', open_source: 'Open Source',
+};
 
 function formatDate(iso) {
   const d = new Date(iso + 'T00:00:00');
@@ -690,7 +750,7 @@ function renderCard(item, i) {
         <div class="card-info">
           <div class="card-name"><a href="${nameLink}" target="_blank" rel="noopener">${item.tool}</a></div>
           <div class="card-meta">
-            <span class="card-tag ${item.tag}">${TAG_LABELS[item.tag] || item.tag}</span>
+            <span class="card-tag ${item.tag}">${(TAG_LABELS[item.tag] || TAG_LABELS_EXTRA[item.tag] || item.tag)}</span>
             <span class="card-date">${formatDate(item.date)}</span>
           </div>
         </div>
@@ -749,6 +809,27 @@ feed.addEventListener('mousemove', e => {
 });
 
 render();
+
+// ── Load news.json (collector output) at runtime ──────────────────
+// Falls back to inline ITEMS if news.json is unavailable.
+(async function loadNewsJson() {
+  try {
+    const resp = await fetch('news.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const remote = await resp.json();
+    if (Array.isArray(remote) && remote.length) {
+      const merged = {};
+      for (const item of ITEMS) merged[item.id] = item;
+      for (const item of remote) {
+        if (item && item.id) merged[item.id] = item;
+      }
+      ITEMS = Object.values(merged);
+      render();
+      const pub = document.getElementById('pubIndicator');
+      if (pub) pub.textContent = '✓ synced ' + new Date().toLocaleDateString();
+    }
+  } catch (e) { /* silent fallback to inline ITEMS */ }
+})();
 
 function toastMsg(msg) {
   toast.textContent = msg;

@@ -1,0 +1,958 @@
+[
+  {
+    "id": "github-search-CopilotKit/CopilotKit-topic-ai",
+    "tool": "Copilotkit",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "The Frontend Stack for Agents & Generative UI. React, Angular, Mobile, Slack, and more.  Makers of the AG-UI Protocol",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://docs.copilotkit.ai",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/CopilotKit/CopilotKit",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/CopilotKit/CopilotKit",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-coze-dev/coze-loop-topic-ai",
+    "tool": "Coze Loop",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Next-generation AI Agent Optimization Platform: Cozeloop addresses challenges in AI agent development by providing full-lifecycle management capabilities from development, debugging, and evaluation to monitoring.  ",
+    "media": {},
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/coze-dev/coze-loop",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/coze-dev/coze-loop",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-synthetic-sciences/openscience-topic-ai",
+    "tool": "Openscience",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "The open-source AI workbench for scientific research",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://openscience.sh",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/synthetic-sciences/openscience",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/synthetic-sciences/openscience",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-continuedev/continue-topic-ai",
+    "tool": "Continue",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "open-source coding agent",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://continue.dev",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/continuedev/continue",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/continuedev/continue",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-ag2ai/ag2-language",
+    "tool": "Ag2",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "AG2 (formerly AutoGen): The Open-Source AgentOS.Join us at: https://discord.gg/sNGSwQME3x",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://ag2.ai",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/ag2ai/ag2",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/ag2ai/ag2",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-sandbox-quantum/switch-language",
+    "tool": "Switch",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Connect any AI agent to your team in Slack, Teams & Discord. Open-source and self-hostable.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://www.flintai.dev/products/switch",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/sandbox-quantum/switch",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/sandbox-quantum/switch",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-topoteretes/cognee-language",
+    "tool": "Cognee",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory across sessions with a self-hosted knowledge graph engine.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://www.cognee.ai",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/topoteretes/cognee",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/topoteretes/cognee",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-winstonkoh87/Athena-Public-language",
+    "tool": "Athena Public",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Athena is a local-first agentic PKM that helps you make better decisions with your own context — persistent memory, structured reasoning, and governed AI agents that work across any LLM. Own the state. Rent the intelligence.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://winstonkoh87.com/athena/",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/winstonkoh87/Athena-Public",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/winstonkoh87/Athena-Public",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-langchain-ai/langchain-language",
+    "tool": "Langchain",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "The agent engineering platform.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://docs.langchain.com/langchain/",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/langchain-ai/langchain",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/langchain-ai/langchain",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-repowise-dev/repowise-language",
+    "tool": "Repowise",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Codebase intelligence for AI and humans: code health scores, auto-generated docs, git analytics, dead code detection, and architectural decisions via MCP.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://repowise.dev",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/repowise-dev/repowise",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/repowise-dev/repowise",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-mlflow/mlflow-language",
+    "tool": "Mlflow",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "The open source AI engineering platform for agents, LLMs, and ML models. MLflow enables teams of all sizes to debug, evaluate, monitor, and optimize production-quality AI applications while controlling costs and managing access to models and data.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://mlflow.org",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/mlflow/mlflow",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/mlflow/mlflow",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-alvinreal/awesome-opensource-ai-language",
+    "tool": "Awesome Opensource Ai",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Curated list of the best truly open-source AI projects, models, tools, and infrastructure. Daily updated.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://awesomeosai.com",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/alvinreal/awesome-opensource-ai",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/alvinreal/awesome-opensource-ai",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-Robinson-AI-Lab/FridayOS1.0-language",
+    "tool": "Fridayos1.0",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "FridayOS 1.0｜鲁滨逊实验室的开源实践项目：从个人 AI 第二大脑出发，探索更亲和人的 Agent OS，让知识、经验与人机协作逐步连接。",
+    "media": {},
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/Robinson-AI-Lab/FridayOS1.0",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/Robinson-AI-Lab/FridayOS1.0",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-langchain-ai/langgraph-language",
+    "tool": "Langgraph",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Build resilient agents.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://docs.langchain.com/oss/python/langgraph/",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/langchain-ai/langgraph",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/langchain-ai/langgraph",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-Scottcjn/Rustchain-language",
+    "tool": "Rustchain",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Sybil-resistant AI agent network with hardware-attested identity. Proof-of-Antiquity blockchain: physical machines across 15+ CPU architectures prove they are real silicon, not VM farms. Agent economy, micropayments, Solana bridge (wRTC). $0 VC.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://rustchain.org",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/Scottcjn/Rustchain",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/Scottcjn/Rustchain",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-henrydaum/second-brain-language",
+    "tool": "Second Brain",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Second Brain is an agentic framework that acts as an operating system, using local file intelligence, workflow automation, and LLMs to complete tasks and communicate over multiple modalities and messaging platforms.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://second-brain.art",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/henrydaum/second-brain",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/henrydaum/second-brain",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-garylab/MakeMoneyWithAI-language",
+    "tool": "Makemoneywithai",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "A list of open-source AI projects you can use to generate income easily.",
+    "media": {},
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/garylab/MakeMoneyWithAI",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/garylab/MakeMoneyWithAI",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-basicmachines-co/basic-memory-language",
+    "tool": "Basic Memory",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "AI conversations that actually remember. Never re-explain your project to your AI again. Join our Discord: https://discord.gg/tyvKNccgqN",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://basicmemory.com",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/basicmachines-co/basic-memory",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/basicmachines-co/basic-memory",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-AgriciDaniel/claude-ads-language",
+    "tool": "Claude Ads",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, X): source-grounded audits, deterministic scoring, versioned JSON reports, and capability-gated account changes.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://claude-ads.md",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/AgriciDaniel/claude-ads",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/AgriciDaniel/claude-ads",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-mozilla-ai/otari-language",
+    "tool": "Otari",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Open-source, OpenAI-compatible LLM gateway you run yourself. One endpoint for 40+ providers, with virtual keys, budgets, and usage tracking.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://otari.ai/docs/gateway",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/mozilla-ai/otari",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/mozilla-ai/otari",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-openaccountants/openaccountants-language",
+    "tool": "Openaccountants",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Open-source Tax Guides for AI agents, reviewed by named CPAs/CAs/EAs. 1,000+ Guides across 190+ jurisdictions. MCP server included. Works with Claude, ChatGPT, Cursor.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://www.openaccountants.com/",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/openaccountants/openaccountants",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/openaccountants/openaccountants",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-mattrobinsonsre/terrapod-language",
+    "tool": "Terrapod",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Open-source Terraform Enterprise replacement",
+    "media": {},
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/mattrobinsonsre/terrapod",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/mattrobinsonsre/terrapod",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-NovaCode37/Prism-platform-language",
+    "tool": "Prism Platform",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Self-hosted OSINT platform. Point it at a domain, IP, email, phone or username and 26 modules run in parallel: WHOIS, DNS, threat intel, breaches, username search. One dashboard, an exposure score, an entity graph, HTML and PDF reports.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://getprism.su",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/NovaCode37/Prism-platform",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/NovaCode37/Prism-platform",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-primaprashant/awesome-voice-typing-language",
+    "tool": "Awesome Voice Typing",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Curated list of open-source speech-to-text and voice typing tools for Linux, macOS, Windows, Android, and iOS. Offline, local, and cloud.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://www.agenticcodingweekly.com/p/5-best-open-source-speech-to-text-tools-in-2026",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/primaprashant/awesome-voice-typing",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/primaprashant/awesome-voice-typing",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-BESSER-PEARL/BESSER-language",
+    "tool": "Besser",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "A Python-based AI-enhanced low-code open-source platform for smart software development",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://besser.readthedocs.io/en/latest/",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/BESSER-PEARL/BESSER",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/BESSER-PEARL/BESSER",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-airbytehq/airbyte-agent-sdk-language",
+    "tool": "Airbyte Agent Sdk",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "🐙 Drop-in tools that give AI agents reliable, permission-aware access to external systems.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://airbyte.com/agents",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/airbytehq/airbyte-agent-sdk",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/airbytehq/airbyte-agent-sdk",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-gunawan1996/world-forge-ai-topic-ai",
+    "tool": "World Forge Ai",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "AI World Generator 2026: Create Self-Evolving Maps & Stories",
+    "media": {},
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/gunawan1996/world-forge-ai",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/gunawan1996/world-forge-ai",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-attevon-llc/OpenTranscribe-language",
+    "tool": "Opentranscribe",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Self-hosted AI-powered transcription platform with speaker diarization, search, and collaboration features. Built with Svelte, FastAPI, and Docker for easy deployment.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "http://docs.opentranscribe.app",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/attevon-llc/OpenTranscribe",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/attevon-llc/OpenTranscribe",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-Quor-a/ZorvAI-topic-ai",
+    "tool": "Zorvai",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Zorv AI — 安卓 Android 端开源 AI Agent 智能体助手。多模型对话、人格系统、记忆、语音全双工 TTS/STT、定时任务、可扩展工具链、飞书/QQ/微信接入。Kotlin + Jetpack Compose 开发。",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://github.com/Quor-a/ZorvAI/releases",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/Quor-a/ZorvAI",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/Quor-a/ZorvAI",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-CCDawn/Vibelution-topic-ai",
+    "tool": "Vibelution",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "本地多 Agent 平台：搭建能沟通、协作与进化的 AI 团队，面向学术研究场景。",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://github.com/CCDawn/Vibelution#readme",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/CCDawn/Vibelution",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/CCDawn/Vibelution",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-TangSY/dailydawn-topic-ai",
+    "tool": "Dailydawn",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "Daily AI brief for indie builders — what to ship, what to skip, who's eating whose lunch. Bilingual.",
+    "media": {},
+    "links": [
+      {
+        "label": "Project site",
+        "url": "https://dailydawn.dev",
+        "kind": "primary"
+      },
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/TangSY/dailydawn",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/TangSY/dailydawn",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "hn-49868083",
+    "tool": "There are no \"rogue\" AI agents",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "There are no \"rogue\" AI agents — via eoinhiggins.substack.com — 40 pts, 20 comments",
+    "media": {},
+    "links": [
+      {
+        "label": "Read more",
+        "url": "https://eoinhiggins.substack.com/p/there-are-no-rogue-ai-agents",
+        "kind": "primary"
+      },
+      {
+        "label": "HN discussion",
+        "url": "https://news.ycombinator.com/item?id=49868083",
+        "kind": "secondary"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "hacker news (eoinhiggins.substack.com)",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "github-search-BigBoySlave/Agents-Prompts-topic-ai",
+    "tool": "Agents Prompts",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "# Agents-PromptsEste repositório contém os prompts usados nas principais ferramentas de IA do mundo, incluindo FULL v0, Cursor, Manus, Lovable e mais. Estude mais de 7000 linhas de prompts para entender como criar seus próprios agentes. 🛠️🤖Se você deseja aprender a criar seus próprios agentes, confira nosso curso gratuito que ensina a combinar ",
+    "media": {},
+    "links": [
+      {
+        "label": "View on GitHub",
+        "url": "https://github.com/BigBoySlave/Agents-Prompts",
+        "kind": "github"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "github.com/BigBoySlave/Agents-Prompts",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  },
+  {
+    "id": "hn-49868202",
+    "tool": "OpenAI halts training of latest models as reports mount of AI agents going rogue",
+    "tag": "agent",
+    "icon": "",
+    "iconUrl": "",
+    "desc": "OpenAI halts training of latest models as reports mount of AI agents going rogue — via www.theguardian.com — 21 pts, 13 comments",
+    "media": {},
+    "links": [
+      {
+        "label": "Read more",
+        "url": "https://www.theguardian.com/technology/2026/sep/27/openai-halts-training-of-latest-models-as-reports-mount-of-ai-agents-going-rogue",
+        "kind": "primary"
+      },
+      {
+        "label": "HN discussion",
+        "url": "https://news.ycombinator.com/item?id=49868202",
+        "kind": "secondary"
+      }
+    ],
+    "date": "2026-09-27",
+    "source": "hacker news (www.theguardian.com)",
+    "_category": "",
+    "_source_name": "",
+    "_repo_url": "",
+    "_version": "",
+    "_priority": 0,
+    "_collected_at": ""
+  }
+]

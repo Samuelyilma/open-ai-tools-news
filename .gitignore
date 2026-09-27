@@ -1,0 +1,6 @@
+# Collector data files (these are generated, committed separately)
+news.json
+seen.json
+watchlist.json
+__pycache__/
+*.pyc
