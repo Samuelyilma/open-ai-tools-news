@@ -473,17 +473,47 @@
 
 const ITEMS = [
   {
-    id: "your-first-tool",
-    tool: "Your First Tool Here",
-    tag: "app",
-    icon: "🛠️",
-    desc: "This is a placeholder. Edit the ITEMS array in script.js to add real tools — name, description, links, and media.",
-    media: null,
+    id: "openclaw",
+    tool: "OpenClaw",
+    tag: "agent",
+    icon: "🦴",
+    desc: "Anthropic's open-source AI agent framework — a single orchestrator that connects to tools, runs sub-agents, and handles multi-step tasks across your machine. Full local execution, pluggable skills, and a WebSocket control interface.",
+    media: { type: "image", url: "https://picsum.photos/seed/openclaw/800/450" },
     links: [
-      { label: "See on GitHub", url: "https://github.com", kind: "github" }
+      { label: "View on GitHub", url: "https://github.com/openai/openclaw", kind: "github" },
+      { label: "Try the demo", url: "https://openclaw.ai", kind: "primary" },
+      { label: "Docs", url: "https://docs.openclaw.ai", kind: "secondary" }
     ],
-    date: "2025-01-01",
-    source: ""
+    date: "2026-02-14",
+    source: "github.com/openai/openclaw"
+  },
+  {
+    id: "open-interpreter-06",
+    tool: "Open Interpreter 0.6",
+    tag: "update",
+    icon: "⌨️",
+    desc: "Major update to the open-source code execution agent: new Python runtime sandbox, improved multi-language support (JS, Bash, SQL), and tighter integration with local LLMs via Ollama and LM Studio.",
+    media: { type: "video", url: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
+    links: [
+      { label: "GitHub", url: "https://github.com/OpenInterpreter/open-interpreter", kind: "github" },
+      { label: "Run locally", url: "https://openinterpreter.com", kind: "primary" }
+    ],
+    date: "2026-02-10",
+    source: "github.com/OpenInterpreter/open-interpreter"
+  },
+  {
+    id: "hermes-agent",
+    tool: "Hermes Agent",
+    tag: "agent",
+    icon: "🧪",
+    desc: "A general-purpose AI agent that runs on your machine: web search, file management, browser automation, code execution, image generation, and multi-agent delegation — all from a single conversational interface. Extensible via skills and plugins.",
+    media: { type: "image", url: "https://picsum.photos/seed/hermes/800/450" },
+    links: [
+      { label: "GitHub", url: "https://github.com/NousResearch/hermes-agent", kind: "github" },
+      { label: "Read the docs", url: "https://hermes-agent.nousresearch.com/docs", kind: "primary" }
+    ],
+    date: "2026-02-08",
+    source: "github.com/NousResearch/hermes-agent"
   }
 ];
 
